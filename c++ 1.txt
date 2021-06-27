@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+class Employee{
+    public:
+        string name;
+        int projects;
+        int workDay;
+        int totalDay;
+
+        void apprais(){
+            try
+            {
+                if(workDay<(totalDay/2) && projects==0){
+                    throw(string("No appraising due to less work and no projects"));
+                }
+                else{
+                    cout<<"Fit for appraising , you deserve it!";
+                }
+            }
+            catch(string exception)
+            {
+                cout<<exception;
+            }
+            
+        }
+};
+
+int main(){
+
+    Employee emp;
+    cout<<"enter the name of the emplyee- ";
+    cin>>emp.name;
+    cout<<"enter the number of projects completed- ";
+    cin>>emp.projects;
+    cout<<"enter the number of days the employee worked- ";
+    cin>>emp.workDay;
+    cout<<"enter the total working days- ";
+    cin>>emp.totalDay;
+    emp.apprais();
+
+}
